@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Pages": "src/"
+            "zf2StaticPages": "src/"
         },
         "classmap": [
             "./Module.php"

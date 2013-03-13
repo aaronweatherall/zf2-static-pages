@@ -9,13 +9,13 @@
  */
 
 return array(
-    'pages' => array(
+    'zf2StaticPages' => array(
         'cms_admin' => false,
         'display_exceptions'       => false,
     ),
     'router' => array(
         'routes' => array(
-            'zf2_static_pages' => array(
+            'zf2StaticPages' => array(
                 'type' => 'Segment',
                 'options' => array(
                     'route' => '[/pages][/:action][/]',
@@ -55,7 +55,7 @@ return array(
     ),
     'view_manager' => array(
         'template_path_stack' => array(
-            'Application' => __DIR__ . '/../view',
+            'zf2StaticPages' => __DIR__ . '/../view',
         ),
     ),
 );

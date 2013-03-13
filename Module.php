@@ -1,5 +1,5 @@
 <?php
-namespace Pages;
+namespace zf2StaticPages;
 
 class Module
 {
