@@ -20,7 +20,7 @@ return array(
                 'options' => array(
                     'route' => '[/pages][/:action][/]',
                     'defaults' => array(
-                        'controller' => 'Pages\Controller\Index',
+                        'controller' => 'zf2StaticPages\Controller\Pages',
                         'action' => 'index'
                     )
                 ),
@@ -50,7 +50,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Pages\Controller\Pages' => 'Pages\Controller\PagesController'
+            'zf2StaticPages\Controller\Pages' => 'zf2StaticPages\Controller\PagesController'
         ),
     ),
     'view_manager' => array(

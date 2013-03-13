@@ -7,7 +7,7 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Pages\Controller;
+namespace zf2StaticPages\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Mvc\Controller\Action;
