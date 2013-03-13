@@ -1,5 +1,5 @@
 {
-    "name": "/aron4m/zf2-static-pages",
+    "name": "aaron4m/zf2-static-pages",
     "description": "The purpose of this module is to create a simple, zero configuration static pages module for Zend Framework 2",
     "keywords": ["static", "pages", "zend-framework", "zf2"],
     "homepage": "https://github.com/aaron4m/zf2-static-pages",
