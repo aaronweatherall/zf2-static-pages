@@ -49,26 +49,10 @@ class PagesController extends AbstractActionController
         // Get the template path stack from the service manager
         $resolver = $this->getEvent()->getApplication()->getServiceManager()->get( 'Zend\View\Resolver\TemplatePathStack' );
 
-        if ( FALSE === $resolver->resolve( $this->getTemplatePath( $controllerName, $actionName ) ) ) {
+        if ( FALSE === $resolver->resolve( '/zf2-static-pages/pages/'.$actionName) ) {
             return FALSE;
         }
 
         return TRUE;
-    }
-
-    /**
-     * Get path to template
-     *
-     * @param $controllerName
-     * @param $actionName
-     *
-     * @return string
-     */
-    protected function getTemplatePath( $controllerName, $actionName)
-    {
-        // TODO: Kinda hacky but it works
-        // Change this function when a better way is discovered!
-
-        return str_replace(array('\controller', '\\'), array('', '/'), $controllerName) . '/' . $actionName;
     }
 }
