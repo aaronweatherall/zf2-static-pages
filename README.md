@@ -15,7 +15,7 @@ php ./composer.phar update
 and finally add StaticPages to the START of your modules list in config/application.php. It's important this comes first as it may override routes setup later.
 
 ## Usage
-Simply drop a .phtml file into the /view/static-pages folder.
+Simply drop a .phtml file into your module/application/view/static-pages folder (or any other module for that matter).
 
 This page can now be viewed from either
 
