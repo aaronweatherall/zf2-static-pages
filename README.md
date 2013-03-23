@@ -1,4 +1,4 @@
-# zf2-static-pages
+# Aaron4m - Static Pages
 
 The purpose of this module is to create a simple, zero configuration static pages module for Zend Framework 2
 
@@ -12,10 +12,10 @@ Added the following requirement to your projects composer.json file.
 and run
 
 php ./composer.phar update
-and finally add zf2StaticPages to the START of your modules list in config/application.php. It's important this comes first as it may override routes setup later.
+and finally add StaticPages to the START of your modules list in config/application.php. It's important this comes first as it may override routes setup later.
 
 ## Usage
-Simply drop a .phtml file into the /view/zf2-static-pages folder.
+Simply drop a .phtml file into the /view/static-pages folder.
 
 This page can now be viewed from either
 

@@ -2,7 +2,7 @@
     "name": "aaron4m/zf2-static-pages",
     "description": "The purpose of this module is to create a simple, zero configuration static pages module for Zend Framework 2",
     "keywords": ["static", "pages", "zend-framework", "zf2"],
-    "homepage": "https://github.com/aaron4m/zf2-static-pages",
+    "homepage": "https://github.com/fourmation/StaticPages",
     "type": "library",
     "license": "New BSD License",
     "authors": [
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-0": {
-            "zf2StaticPages": "src/"
+            "StaticPages": "src/"
         },
         "classmap": [
             "./Module.php"

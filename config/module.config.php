@@ -9,18 +9,18 @@
  */
 
 return array(
-    'zf2StaticPages' => array(
+    'StaticPages' => array(
         'cms_admin' => false,
         'display_exceptions'       => false,
     ),
     'router' => array(
         'routes' => array(
-            'zf2StaticPages' => array(
+            'StaticPages' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '[/pages][/:action][/]',
+                    'route' => '[/pages][/:action][/:params][/]',
                     'defaults' => array(
-                        'controller' => 'zf2StaticPages\Controller\Pages',
+                        'controller' => 'StaticPages\Controller\Pages',
                         'action' => 'index'
                     )
                 ),
@@ -50,12 +50,12 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'zf2StaticPages\Controller\Pages' => 'zf2StaticPages\Controller\PagesController'
+            'StaticPages\Controller\Pages' => 'StaticPages\Controller\PagesController'
         ),
     ),
     'view_manager' => array(
         'template_path_stack' => array(
-            'zf2StaticPages' => __DIR__ . '/../view',
+            'StaticPages' => __DIR__ . '/../view',
         ),
     ),
 );
