@@ -24,7 +24,7 @@ class PagesController extends AbstractActionController
     public function notFoundAction()
     {
         // Check if a template exists for the current requested action
-        $template = $this->getTemplate() ;
+        $template = $this->getTemplate();
         if (false === $template) {
             // If not, return a 404
             $this->getResponse()->setStatusCode(404);
@@ -40,12 +40,17 @@ class PagesController extends AbstractActionController
     /**
      * Get path to template
      *
-     * @return bool
+     * @return string, bool
      */
     protected function getTemplate()
     {
-        $controllerName = strtolower($this->params('controller'));
-        $exp = explode('/', $this->getRequest()->getRequestUri());
+        // Create Directory Separator define shortcut
+        if (! defined('DS')) {
+            define('DS', DIRECTORY_SEPARATOR);
+        }
+
+        $path = 'static-pages' . DS . 'pages' . DS;
+        $routeParams = $this->getEvent()->getRouteMatch()->getParams();
 
         // Get the template path stack from the service manager
         $resolver = $this->getEvent()
@@ -53,12 +58,21 @@ class PagesController extends AbstractActionController
             ->getServiceManager()
             ->get('Zend\View\Resolver\TemplatePathStack');
 
-        $template = implode(DIRECTORY_SEPARATOR, $exp) ;
+        // Get the request URI (to deal with extra un-named parameters
+        $exp = explode('/', $this->getRequest()->getRequestUri());
 
-        if (false === $resolver->resolve('static-pages' . DIRECTORY_SEPARATOR . 'pages' . $template)) {
+        // Slice out any prefix aka pages
+        $template = $path . implode(DS, array_slice($exp, array_search($routeParams['action'], $exp)));
+
+        // Attempt to resolve the template
+        $resolved_template = $resolver->resolve($template);
+
+        // If template is not found, return false
+        if (false === $resolved_template) {
             return false;
         }
 
+        // Return the template to the viewManager
         return $template;
     }
 }
